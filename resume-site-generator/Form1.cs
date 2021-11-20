@@ -10,11 +10,53 @@ using System.Windows.Forms;
 
 namespace resume_site_generator
 {
+    // parent class for html elements to generate 
+    class HElement
+    {
+        public string tagName { get; set; }
+
+        // overides so our listbox displays the name of our element
+        public override string ToString()
+        {
+            return tagName;
+        }
+    }
+
+    class Paragraph : HElement
+    { 
+        public string innerText { get; set; }
+
+        // default constructor 
+        public Paragraph()
+        {
+            tagName = "paragraph";
+        }
+    }
+
+    class Header : HElement
+    { 
+        public string innerText { get; set; }
+        public int size { get; set; }
+
+        public Header()
+        {
+            tagName = "header";
+            size = 1;
+        }
+    }
+
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+            // initialize our objects to put into list 1 
+            Paragraph myParagraph = new Paragraph();
+            Header myHeader = new Header();
+
+            listBox1.Items.Add(myParagraph);
+            listBox1.Items.Add(myHeader);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,7 +66,7 @@ namespace resume_site_generator
 
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("mousing down");
+            //System.Diagnostics.Debug.WriteLine("mousing down");
             listBox1.DoDragDrop(listBox1.Text, DragDropEffects.Copy | DragDropEffects.Move);
         }
 
@@ -36,35 +78,23 @@ namespace resume_site_generator
                 e.Effect = DragDropEffects.Copy;
             }
         }
-        /*
-private void pictureBox1_Click(object sender, EventArgs e)
-{
-System.Diagnostics.Debug.WriteLine("clicked");
-}
 
-private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-{
-System.Diagnostics.Debug.WriteLine("mousing down");
-pictureBox1.DoDragDrop(pictureBox1.Text, DragDropEffects.Copy | DragDropEffects.Move);
-}
+        private void listBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            listBox2.Items.Add(e.Data.GetData(DataFormats.Text).ToString());
+        }
 
-private void pictureBox1_MouseEnter(object sender, EventArgs e)
-{
-pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine(listBox2.Items[2].ToString());
+            }
+            catch
+            {
+                System.Diagnostics.Debug.WriteLine("not there yet");
 
-private void textBox1_DragEnter(object sender, DragEventArgs e)
-{
-if (e.Data.GetDataPresent(DataFormats.Bitmap) != true)
-{
-System.Diagnostics.Debug.WriteLine("bbb");
-e.Effect = DragDropEffects.Copy;
-}
-else
-{
-System.Diagnostics.Debug.WriteLine("aaaaa");
-}
-}
-*/
+            }
+        }
     }
 }
