@@ -13,4 +13,4 @@ C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debu
 C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debug\netcoreapp3.1\resume-site-generator.pdb
 C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debug\netcoreapp3.1\resume-site-generator.genruntimeconfig.cache
 C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debug\netcoreapp3.1\resume_site_generator.Properties.Resources.resources
-C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debug\netcoreapp3.1\resume_site_generator.HElement.resources
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Debug\netcoreapp3.1\resume_site_generator.Form1.resources
