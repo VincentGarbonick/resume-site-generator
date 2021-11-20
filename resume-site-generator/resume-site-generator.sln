@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSite", "DragAndDropSite.csproj", "{0435EF24-6F8F-4F6E-BC73-9CA4A8FB914A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "resume-site-generator", "resume-site-generator.csproj", "{5537540C-8962-49B6-9378-5B3A70F77C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0435EF24-6F8F-4F6E-BC73-9CA4A8FB914A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0435EF24-6F8F-4F6E-BC73-9CA4A8FB914A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0435EF24-6F8F-4F6E-BC73-9CA4A8FB914A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0435EF24-6F8F-4F6E-BC73-9CA4A8FB914A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5537540C-8962-49B6-9378-5B3A70F77C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5537540C-8962-49B6-9378-5B3A70F77C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5537540C-8962-49B6-9378-5B3A70F77C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5537540C-8962-49B6-9378-5B3A70F77C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0836189A-C3D4-48AB-B465-97A365A87CDB}
+		SolutionGuid = {E9A2DDD4-0674-49AE-ACEC-44081E544E4A}
 	EndGlobalSection
 EndGlobal
