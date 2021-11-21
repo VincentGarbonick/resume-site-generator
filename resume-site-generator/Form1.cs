@@ -43,9 +43,10 @@ namespace resume_site_generator
             // left click -> for dragging and dropping
             // right click -> for changing aspects of an element (get right vs left mousebutton working for all forms)
             //MAKE RETURNER IN CLASS THAT RETURNS THE RENDERED HTML ELEMENT!!!!
-            //GENERATE NAME BASED ON ELEMENT 
+            //GENERATE NAME BASED ON ELEMENT OPTION FOR POPUP FORM 
 
-
+            // TODO: get some kind of FX for draggin and dropping in list two
+            
             // delete the first listbox item in listbox2 
             listBox2.Items.RemoveAt(0);
         }
@@ -165,6 +166,11 @@ namespace resume_site_generator
                     }
                 }
             }     
+        }
+
+        private void listBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("clicked");
         }
     }
 }
