@@ -170,7 +170,16 @@ namespace resume_site_generator
 
         private void listBox2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("clicked");
+            // pop up our tag editor and pass the object we clicked on             
+            // Form2 popUpForm = new Form2(listBox2.Items[listBox2.SelectedIndex]);
+            // popUpForm.ShowDialog();
+
+            propertyGrid1.SelectedObject = listBox2.Items[listBox2.SelectedIndex];
+        }
+
+        private void propertyGrid1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
