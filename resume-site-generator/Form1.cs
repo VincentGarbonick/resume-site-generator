@@ -11,10 +11,16 @@ using System.Windows.Forms;
 
 namespace resume_site_generator
 {
+    
     // parent class for html elements to generate 
     
     public partial class Form1 : Form
     {
+        // these are the variables for storing the index position of the list objects
+        public int DOWN_INDEX= -1;
+        public int NEW_INDEX = -1;
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +43,7 @@ namespace resume_site_generator
             // left click -> for dragging and dropping
             // right click -> for changing aspects of an element (get right vs left mousebutton working for all forms)
             //MAKE RETURNER IN CLASS THAT RETURNS THE RENDERED HTML ELEMENT!!!!
+            //GENERATE NAME BASED ON ELEMENT 
 
 
             // delete the first listbox item in listbox2 
@@ -86,7 +93,7 @@ namespace resume_site_generator
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine(listBox2.Items[2].ToString());
+                System.Diagnostics.Debug.WriteLine(listBox2.Items[5].ToString());
             }
             catch
             {
@@ -109,30 +116,55 @@ namespace resume_site_generator
          */
         private void listBox2_MouseDown(object sender, MouseEventArgs e)
         {
-            ListBox lst = sender as ListBox;
+            if (e.Button == MouseButtons.Right)
+            {
+                int index = listBox2.IndexFromPoint(e.Location);
 
-            int index = lst.IndexFromPoint(e.Location);
-
-            // System.Diagnostics.Debug.WriteLine(index);
-
-            lst.SelectedIndex = index;
-
-            // Drag the item.
-            DragItem drag_item = new DragItem(lst, index, lst.Items[index]);
-            lst.DoDragDrop(drag_item, DragDropEffects.Move);
-
+                if (index == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    DOWN_INDEX = index;
+                }
+                
+            }
         }
-
-
-
         private void listBox2_MouseMove(object sender, MouseEventArgs e)
         {
 
         }
-
         private void listBox2_MouseUp(object sender, MouseEventArgs e)
         {
+            
+            if (e.Button == MouseButtons.Right)
+            {
+                int index = listBox2.IndexFromPoint(e.Location);
+                if (index == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    NEW_INDEX = index;
 
+                    // if the indexes are different 
+                    if(NEW_INDEX != DOWN_INDEX)
+                    {
+                        var tempDownObject = listBox2.Items[DOWN_INDEX];
+                        var tempCurrentObject = listBox2.Items[NEW_INDEX];
+
+                        // remove at down index, insert at down index 
+                        listBox2.Items.RemoveAt(DOWN_INDEX);
+                        listBox2.Items.Insert(DOWN_INDEX, tempCurrentObject);
+
+                        // do same for new index 
+                        listBox2.Items.RemoveAt(NEW_INDEX);
+                        listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                    }
+                }
+            }     
         }
     }
 }
