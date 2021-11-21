@@ -46,6 +46,7 @@
             this.listBox1.Size = new System.Drawing.Size(159, 304);
             this.listBox1.TabIndex = 0;
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
+            this.listBox1.MouseEnter += new System.EventHandler(this.listBox1_MouseEnter);
             // 
             // listBox2
             // 
@@ -56,14 +57,18 @@
             ""});
             this.listBox2.Location = new System.Drawing.Point(199, 58);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(159, 304);
+            this.listBox2.Size = new System.Drawing.Size(504, 304);
             this.listBox2.TabIndex = 0;
             this.listBox2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox2_DragDrop);
             this.listBox2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox2_DragEnter);
+            this.listBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseDown);
+            this.listBox2.MouseEnter += new System.EventHandler(this.listBox2_MouseEnter);
+            this.listBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseMove);
+            this.listBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseUp);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(497, 58);
+            this.button1.Location = new System.Drawing.Point(890, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
