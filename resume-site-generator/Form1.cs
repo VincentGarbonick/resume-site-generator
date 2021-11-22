@@ -46,6 +46,7 @@ namespace resume_site_generator
             //GENERATE NAME BASED ON ELEMENT OPTION FOR POPUP FORM 
 
             // TODO: get some kind of FX for draggin and dropping in list two
+            // TODO: add helper text to all tag attributes for propertyviewer 
             
             // delete the first listbox item in listbox2 
             listBox2.Items.RemoveAt(0);
@@ -150,19 +151,32 @@ namespace resume_site_generator
                 {
                     NEW_INDEX = index;
 
-                    // if the indexes are different 
+                    // For information on drag and drop implementation, check the dragAndDropExplain.txt in the project folder
                     if(NEW_INDEX != DOWN_INDEX)
                     {
-                        var tempDownObject = listBox2.Items[DOWN_INDEX];
-                        var tempCurrentObject = listBox2.Items[NEW_INDEX];
+                        if (NEW_INDEX < DOWN_INDEX)
+                        {
+                            var tempDownObject = listBox2.Items[DOWN_INDEX];
+                            var tempCurrentObject = listBox2.Items[NEW_INDEX];
 
-                        // remove at down index, insert at down index 
-                        listBox2.Items.RemoveAt(DOWN_INDEX);
-                        listBox2.Items.Insert(DOWN_INDEX, tempCurrentObject);
+                            // remove and leave holes 
+                            listBox2.Items.RemoveAt(DOWN_INDEX);
+                            listBox2.Items.RemoveAt(NEW_INDEX);
 
-                        // do same for new index 
-                        listBox2.Items.RemoveAt(NEW_INDEX);
-                        listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                            // put the down object at the current index 
+                            listBox2.Items.Insert(NEW_INDEX,tempCurrentObject);
+
+                            // move all other objects down the list , to fill holes, starting at lowest number
+                            for (int i = DOWN_INDEX; i == NEW_INDEX; i--)
+                            {
+                                var tempMoveDownObject = listBox2.Items[i + 1];
+                                listBox2.Items.Insert(i, tempMoveDownObject);
+                            }
+
+                            // fill the second to last "hole" with the old data 
+                            listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                        }
+                    
                     }
                 }
             }     
@@ -170,16 +184,28 @@ namespace resume_site_generator
 
         private void listBox2_Click(object sender, EventArgs e)
         {
-            // pop up our tag editor and pass the object we clicked on             
-            // Form2 popUpForm = new Form2(listBox2.Items[listBox2.SelectedIndex]);
-            // popUpForm.ShowDialog();
-
             propertyGrid1.SelectedObject = listBox2.Items[listBox2.SelectedIndex];
         }
 
         private void propertyGrid1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // resets the display name of item you're currently working on 
+            var tempObj = listBox2.Items[listBox2.SelectedIndex];
+            listBox2.Items[listBox2.SelectedIndex] = tempObj;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < listBox2.Items.Count; i++)
+            {
+                var tempObj = listBox2.Items[i];
+                listBox2.Items[i] = tempObj;
+            }
         }
     }
 }

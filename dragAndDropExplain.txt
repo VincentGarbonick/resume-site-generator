@@ -1,0 +1,73 @@
+                            /*
+                            // remove at down index, insert at down index 
+                            listBox2.Items.RemoveAt(DOWN_INDEX);
+                            listBox2.Items.Insert(DOWN_INDEX, tempCurrentObject);
+
+                            // do same for new index 
+                            listBox2.Items.RemoveAt(NEW_INDEX);
+                            listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                            */
+				(old algorithm)
+
+
+i1 
+i2
+i3 <- drug here
+i4
+i5
+i6 <- started here  
+i7
+
+case 1: new index lower than old index 
+
+1.) store i6 in temp 
+2.) delete i6 
+
+i1 
+i2
+i3
+i4
+i5
+[ ] (hole) 
+i7
+
+3.) store i3 in temp 
+4.) delete i3 
+
+i1
+i2
+[]
+i4
+i5
+[]
+i7
+
+5.) replace i3 with i6
+
+i1
+i2
+new_i3
+i4
+i5
+[]
+i7
+
+6.) move everything between new and old down 1 
+
+i1
+i2
+new_i3
+[]
+i5
+i6
+i7
+
+7.) insert old i3 into the i4 index 
+
+i1
+i2
+new_i3
+old_i3
+i5
+i6
+i7

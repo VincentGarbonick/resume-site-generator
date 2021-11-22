@@ -23,6 +23,7 @@ namespace resume_site_generator
         public Paragraph()
         {
             displayName = "paragraph";
+            
             tagName = "paragraph";
         }
     }
