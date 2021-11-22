@@ -71,3 +71,34 @@ old_i3
 i5
 i6
 i7
+
+
+i1 
+i2
+i3 <- started here
+i4
+i5
+i6 <- drug here  
+i7
+
+1.) save and remove elements 
+
+i1 
+i2
+[]
+i4
+i5
+[]
+i7
+
+2.) copy i3 down 
+
+i1 
+i2
+[]
+i4
+i5
+new_i3
+i7
+
+3.) move i5 and i4 up and replace hole 

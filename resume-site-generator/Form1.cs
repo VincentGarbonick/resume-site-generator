@@ -154,17 +154,16 @@ namespace resume_site_generator
                     // For information on drag and drop implementation, check the dragAndDropExplain.txt in the project folder
                     if(NEW_INDEX != DOWN_INDEX)
                     {
+                        var tempDownObject = listBox2.Items[DOWN_INDEX];
+                        var tempCurrentObject = listBox2.Items[NEW_INDEX];
+
                         if (NEW_INDEX < DOWN_INDEX)
                         {
-                            var tempDownObject = listBox2.Items[DOWN_INDEX];
-                            var tempCurrentObject = listBox2.Items[NEW_INDEX];
-
                             // remove and leave holes 
                             listBox2.Items.RemoveAt(DOWN_INDEX);
                             listBox2.Items.RemoveAt(NEW_INDEX);
 
-                            // put the down object at the current index 
-                            listBox2.Items.Insert(NEW_INDEX,tempCurrentObject);
+                            listBox2.Items.Insert(NEW_INDEX, tempCurrentObject);
 
                             // move all other objects down the list , to fill holes, starting at lowest number
                             for (int i = DOWN_INDEX; i == NEW_INDEX; i--)
@@ -175,6 +174,28 @@ namespace resume_site_generator
 
                             // fill the second to last "hole" with the old data 
                             listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                        }
+                        // we are moving an element "down"
+                        else if(NEW_INDEX > DOWN_INDEX)
+                        {
+                            listBox2.Items.RemoveAt(NEW_INDEX);
+                            listBox2.Items.Insert(NEW_INDEX, tempCurrentObject);
+                            listBox2.Items.RemoveAt(DOWN_INDEX);
+
+                            for (int i = DOWN_INDEX; i == NEW_INDEX; i++)
+                            {
+                                var tempMoveDownObject = listBox2.Items[i + 1];
+                                listBox2.Items.Insert(i, tempMoveDownObject);
+                            }
+
+                            listBox2.Items.Insert(NEW_INDEX, tempDownObject);
+                        }
+                        else
+                        {
+                            // if there is some edge case I'm not thinking of, bail everything out
+                            listBox2.Items.Insert(DOWN_INDEX, tempDownObject);
+                            listBox2.Items.Insert(NEW_INDEX, tempCurrentObject);
+                            return;
                         }
                     
                     }
