@@ -8,15 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\grab.cur" />
-    <None Remove="Resources\HandMoveGrab.cur" />
+    <None Remove="Resources\grabWhite32.cur" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\grab.cur">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\HandMoveGrab.cur" />
+    <EmbeddedResource Include="Resources\grabWhite32.cur" />
   </ItemGroup>
 
   <ItemGroup>

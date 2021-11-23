@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Reflection;
+
 
 
 namespace resume_site_generator
 {
-    
     // parent class for html elements to generate 
-    
     public partial class Form1 : Form
     {
         // these are the variables for storing the index position of the list objects
         public int DOWN_INDEX= -1;
         public int NEW_INDEX = -1;
-        
 
         public Form1()
         {
@@ -122,10 +122,9 @@ namespace resume_site_generator
                 {
                     DOWN_INDEX = index;
                 }
-                //this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\grab.ico");
-                //this.Cursor = new Cursor(GetType(), "HandMoveGrab.cur");
-                System.Diagnostics.Debug.WriteLine("fuck me");
 
+                // this was a fucking nightmare NOTE TO FUTURE VINNIE, .CUR FILES HAVE TO BE 32X32 BIT TO WORK FFS REEEEE WOOOO
+                listBox2.Cursor = new Cursor(new System.IO.MemoryStream(Properties.Resources.grabWhite32));
             }
         }
         private void listBox2_MouseUp(object sender, MouseEventArgs e)
@@ -133,6 +132,8 @@ namespace resume_site_generator
             
             if (e.Button == MouseButtons.Right)
             {
+                listBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+
                 int index = listBox2.IndexFromPoint(e.Location);
                 if (index == -1)
                 {
@@ -245,6 +246,15 @@ namespace resume_site_generator
                 string fileName = textBox1.Text + "\\" + textBox2.Text + ".html";
                 System.Diagnostics.Debug.WriteLine(fileName);
             }
+        }
+
+        private void listBox2_MouseHover(object sender, EventArgs e)
+        {
+            Point point = listBox2.PointToClient(Cursor.Position);
+            int index = listBox2.IndexFromPoint(point);
+            if (index < 0) return;
+            
+            //System.Diagnostics.Write
         }
     }
 }

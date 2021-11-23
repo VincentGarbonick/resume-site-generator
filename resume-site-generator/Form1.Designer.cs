@@ -75,6 +75,7 @@
             this.listBox2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox2_DragEnter);
             this.listBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseDown);
             this.listBox2.MouseEnter += new System.EventHandler(this.listBox2_MouseEnter);
+            this.listBox2.MouseHover += new System.EventHandler(this.listBox2_MouseHover);
             this.listBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseUp);
             // 
             // button1

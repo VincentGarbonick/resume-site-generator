@@ -61,21 +61,11 @@ namespace resume_site_generator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ABT97BB5C67A3E0B8C3592C0AEC72F3EA434021DFE4A8D61665B3FD8BC59B7C53AF {
-            get {
-                object obj = ResourceManager.GetObject("ABT97BB5C67A3E0B8C3592C0AEC72F3EA434021DFE4A8D61665B3FD8BC59B7C53AF", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] HandMoveGrab {
+        internal static byte[] grabWhite32 {
             get {
-                object obj = ResourceManager.GetObject("HandMoveGrab", resourceCulture);
+                object obj = ResourceManager.GetObject("grabWhite32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
