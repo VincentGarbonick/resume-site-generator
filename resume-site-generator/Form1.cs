@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace resume_site_generator
@@ -25,31 +26,22 @@ namespace resume_site_generator
         {
             InitializeComponent();
 
-            // initialize our objects to put into list 1 
-
-            /*
-            Paragraph myParagraph = new Paragraph();
-            Header myHeader = new Header();
-            Button myButton = new Button();
-
-            listBox1.Items.Add(myParagraph);
-            listBox1.Items.Add(myHeader);
-            listBox1.Items.Add(myButton);
-            */
-
-            // why are we doing this in listBox1? we can easily do this in listbox 2 and just use names for listbox 1...
-            // we can ALSO auto name based on the position of the indexes :)
-            // https://stackoverflow.com/questions/15322342/mousedown-and-click-conflict
-            // left click -> for dragging and dropping
-            // right click -> for changing aspects of an element (get right vs left mousebutton working for all forms)
             //MAKE RETURNER IN CLASS THAT RETURNS THE RENDERED HTML ELEMENT!!!!
             //GENERATE NAME BASED ON ELEMENT OPTION FOR POPUP FORM 
 
             // TODO: get some kind of FX for draggin and dropping in list two
             // TODO: add helper text to all tag attributes for propertyviewer 
+            // TODO: dynamic object method calling 
+            // TOOD: add resume button, add image button
+            // TODO: change font button
+            // TODO: get the window to size properly, probably attributes you can set in form
+            // TODO: element to top, element to bottom buttons 
             
             // delete the first listbox item in listbox2 
             listBox2.Items.RemoveAt(0);
+
+            textBox1.Text = Directory.GetCurrentDirectory();
+            textBox2.PlaceholderText = "your_file_name";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -130,12 +122,11 @@ namespace resume_site_generator
                 {
                     DOWN_INDEX = index;
                 }
-                
-            }
-        }
-        private void listBox2_MouseMove(object sender, MouseEventArgs e)
-        {
+                //this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\grab.ico");
+                //this.Cursor = new Cursor(GetType(), "HandMoveGrab.cur");
+                System.Diagnostics.Debug.WriteLine("fuck me");
 
+            }
         }
         private void listBox2_MouseUp(object sender, MouseEventArgs e)
         {
@@ -205,7 +196,10 @@ namespace resume_site_generator
 
         private void listBox2_Click(object sender, EventArgs e)
         {
-            propertyGrid1.SelectedObject = listBox2.Items[listBox2.SelectedIndex];
+            if (listBox2.SelectedIndex != -1)
+            {
+                propertyGrid1.SelectedObject = listBox2.Items[listBox2.SelectedIndex];
+            }
         }
 
         private void propertyGrid1_Click(object sender, EventArgs e)
@@ -226,6 +220,30 @@ namespace resume_site_generator
             {
                 var tempObj = listBox2.Items[i];
                 listBox2.Items[i] = tempObj;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog browser = new FolderBrowserDialog();
+            browser.Description = "The folder where the generated HTML file will be.";
+            if(browser.ShowDialog () == System.Windows.Forms.DialogResult.OK)
+            {
+                textBox1.Text = browser.SelectedPath;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox2.Text))
+            {
+                string fileName = textBox1.Text + "\\" + textBox2.Text + ".html";
+                System.Diagnostics.Debug.WriteLine(fileName);
             }
         }
     }

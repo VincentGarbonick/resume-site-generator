@@ -69,5 +69,15 @@ namespace resume_site_generator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] HandMoveGrab {
+            get {
+                object obj = ResourceManager.GetObject("HandMoveGrab", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
