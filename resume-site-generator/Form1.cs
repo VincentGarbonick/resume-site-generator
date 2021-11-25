@@ -32,12 +32,13 @@ namespace resume_site_generator
             //MAKE RETURNER IN CLASS THAT RETURNS THE RENDERED HTML ELEMENT!!!!
             //GENERATE NAME BASED ON ELEMENT OPTION FOR POPUP FORM 
 
-            // TODO: get some kind of FX for draggin and dropping in list two
+            // TODO: get some kind of FX for draggin and dropping in list two (this is going to be very involved, save for last if there's time from other projects) 
+
             // TODO: add helper text to all tag attributes for propertyviewer 
             // TODO: dynamic object method calling 
             // TOOD: add resume button, add image button
             // TODO: change font button
-            // TODO: get the window to size properly, probably attributes you can set in form
+            
             // TODO: element to top, element to bottom buttons 
             
             // delete the first listbox item in listbox2 
