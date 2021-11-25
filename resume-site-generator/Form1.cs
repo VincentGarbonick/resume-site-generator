@@ -22,6 +22,9 @@ namespace resume_site_generator
         public int DOWN_INDEX= -1;
         public int NEW_INDEX = -1;
 
+        // variable for storing index of whatever the mouse is hovering over 
+        public int PREVIOUS_INDEX = -1;
+
         public Form1()
         {
             InitializeComponent();
@@ -96,11 +99,24 @@ namespace resume_site_generator
             }
         }
 
- 
+
 
         private void listBox2_MouseEnter(object sender, EventArgs e)
         {
             listBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+
+            Point point = listBox2.PointToClient(Cursor.Position);
+            int index = listBox2.IndexFromPoint(point);
+
+            if (index < 0)
+            {
+                return;
+            }
+            else
+            {
+                PREVIOUS_INDEX = index;
+                //listBox2.BorderStyle
+            }
         }
 
         /*
@@ -248,13 +264,31 @@ namespace resume_site_generator
             }
         }
 
-        private void listBox2_MouseHover(object sender, EventArgs e)
+ 
+
+        private void listBox2_MouseMove(object sender, MouseEventArgs e)
         {
             Point point = listBox2.PointToClient(Cursor.Position);
             int index = listBox2.IndexFromPoint(point);
-            if (index < 0) return;
-            
-            //System.Diagnostics.Write
+
+            //if (index < 0) return;
+            //if (index != HOVER_INDEX) HOVER_INDEX = index;
+
+            System.Diagnostics.Debug.WriteLine(index);
         }
+
+        // https://stackoverflow.com/questions/91747/background-color-of-a-listbox-item-windows-forms
+        private void listBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            Graphics g = e.Graphics;
+
+            g.FillRectangle(new SolidBrush(Color.Silver), e.Bounds);
+
+            // Print text
+
+            e.DrawFocusRectangle();
+        }
+
     }
 }
