@@ -33,19 +33,22 @@ namespace resume_site_generator
             //GENERATE NAME BASED ON ELEMENT OPTION FOR POPUP FORM 
 
             // TODO: get some kind of FX for draggin and dropping in list two (this is going to be very involved, save for last if there's time from other projects) 
+            // TODO: element to top, element to bottom buttons 
 
             // TODO: add helper text to all tag attributes for propertyviewer 
             // TODO: dynamic object method calling 
             // TOOD: add resume button, add image button
             // TODO: change font button
-            
-            // TODO: element to top, element to bottom buttons 
-            
+
+
             // delete the first listbox item in listbox2 
             listBox2.Items.RemoveAt(0);
 
             textBox1.Text = Directory.GetCurrentDirectory();
             textBox2.PlaceholderText = "your_file_name";
+
+            ButtonII cum = new ButtonII();
+            cum.testII();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -275,7 +278,7 @@ namespace resume_site_generator
             //if (index < 0) return;
             //if (index != HOVER_INDEX) HOVER_INDEX = index;
 
-            System.Diagnostics.Debug.WriteLine(index);
+            //System.Diagnostics.Debug.WriteLine(index);
         }
 
         // https://stackoverflow.com/questions/91747/background-color-of-a-listbox-item-windows-forms
