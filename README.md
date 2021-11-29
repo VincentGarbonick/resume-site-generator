@@ -31,5 +31,9 @@ displays the proper name. Pressing "Refresh List" will perform this process on a
 
 ### Misc Information 
 
-### On embedding videos
-* When adding an embedded video, get the youtube link from the "embed video" option in youtube. Otherwise, embedding the video will not work. 
+### On Embedding videos
+* When adding an embedded video, get the youtube link from the "embed video" option in youtube. Otherwise, embedding the video will not work.
+
+### On Adding Images
+* When adding an image, make sure you either know the full path of the image. You could also simply put the image in the same folder as your generated HTML file and specify the name of the image plus the file extension. For example, if I have a file called 
+"Andy.png" in my HTML director, I would just put "Andy.png" into the Image src attribute.
