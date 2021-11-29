@@ -325,7 +325,8 @@ namespace resume_site_generator
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            Portrait portrait = new Portrait();
+            listBox2.Items.Add(portrait);
         }
 
         private void button5_Click(object sender, EventArgs e)

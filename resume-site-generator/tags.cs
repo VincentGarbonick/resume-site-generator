@@ -244,13 +244,14 @@ namespace resume_site_generator
 
     class Hyperlink : HElement
     {
-        public string src { get; set; }
-
+        public string href { get; set; }
+        public string innerText { get; set; }
         public Hyperlink()
         {
-            src = "https://www.google.com";
+            href = "https://www.google.com";
             tagName = "a";
             displayName = "link";
+            innerText = href;
         }
     }
 
@@ -359,6 +360,30 @@ namespace resume_site_generator
             displayName = "Subset";
             tagName = "sub";
             innerText = "";
+        }
+    }
+
+    class Portrait : HElement
+    {
+        public string src { get; set; }
+
+        public Portrait()
+        {
+            displayName = "self portrait";
+            tagName = "img";
+            src = "";
+        }
+
+        public override string generateLine()
+        {
+            string builtString = base.generateLine();
+
+            // get index of our first img so we can insert the border radisu property
+            int indexofImg = builtString.IndexOf("img", 0);
+
+            builtString = builtString.Insert(indexofImg + 4, string.Format("style=\"{0} {1}\"","border-radius: 50%; ", "width: 250px; height: auto;"));
+
+            return builtString;
         }
     }
 }
