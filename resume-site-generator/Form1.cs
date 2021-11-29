@@ -47,8 +47,14 @@ namespace resume_site_generator
             textBox1.Text = Directory.GetCurrentDirectory();
             textBox2.PlaceholderText = "your_file_name";
 
-            ButtonII cum = new ButtonII();
-            cum.testII();
+            Button cum = new Button();
+            cum.generateLine();
+
+            Paragraph bum = new Paragraph();
+            bum.generateLine();
+
+            Header shum = new Header();
+            shum.generateLine();
         }
 
         private void Form1_Load(object sender, EventArgs e)
