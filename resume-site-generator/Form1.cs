@@ -36,10 +36,7 @@ namespace resume_site_generator
             // TODO: element to top, element to bottom buttons 
 
             // TODO: add helper text to all tag attributes for propertyviewer 
-            // TODO: dynamic object method calling 
-            // TOOD: add resume button, add image button
             // TODO: change font button
-
 
             // delete the first listbox item in listbox2 
             listBox2.Items.RemoveAt(0);
@@ -227,9 +224,12 @@ namespace resume_site_generator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // resets the display name of item you're currently working on 
-            var tempObj = listBox2.Items[listBox2.SelectedIndex];
-            listBox2.Items[listBox2.SelectedIndex] = tempObj;
+            if (listBox2.SelectedIndex != -1)
+            {
+                // resets the display name of item you're currently working on 
+                var tempObj = listBox2.Items[listBox2.SelectedIndex];
+                listBox2.Items[listBox2.SelectedIndex] = tempObj;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -318,5 +318,14 @@ namespace resume_site_generator
             e.DrawFocusRectangle();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

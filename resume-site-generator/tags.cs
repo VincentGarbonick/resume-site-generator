@@ -114,7 +114,7 @@ namespace resume_site_generator
     class Header : HElement
     {
         public string innerText { get; set; }
-        public int size;
+        public int size { get; set; }
 
         public Header()
         {
@@ -159,7 +159,6 @@ namespace resume_site_generator
         public string href { get; set; }
         public string action { get; set; }
         public string value { get; set; }
-        public bool disabled { get; set; }
         public string innerText { get; set; }
         public Button()
         {
@@ -169,8 +168,146 @@ namespace resume_site_generator
             href = "";
             action = "";
             value = "button";
-            disabled = false;
             innerText = "";
         }
     }
+
+    class Bullet : HElement
+    {
+        public string innerText { get; set; }
+        public Bullet()
+        {
+            displayName = "bullet_point";
+            tagName = "li";
+            innerText = "";
+        }
+    }
+
+    class Image : HElement
+    {
+        public string src { get; set; }
+
+        public Image()
+        {
+            displayName = "image";
+            tagName = "img";
+            src = "";
+        }
+    }
+
+    class Quote : HElement
+    {
+        public string innerText { get; set; }
+
+        public Quote()
+        {
+            displayName = "quote";
+            tagName = "q";
+            innerText = "";
+        }
+    }
+    class Strong : HElement
+    {
+        public string innerText { get; set; }
+        public Strong()
+        {
+            displayName = "Strong Text";
+            tagName = "strong";
+            innerText = "";
+        }
+    }
+
+    class Strikethrough : HElement
+    {
+        public string innerText { get; set; }
+        public Strikethrough()
+        {
+            displayName = "Strikethrough";
+            tagName = "s";
+            innerText = "";
+        }
+    }
+    class YoutubeVideo : HElement
+    {
+        public string src { get; set; }
+        public string width { get; set; }
+        public string height { get; set; }
+        public YoutubeVideo()
+        {
+            displayName = "Embedded Youtube Video";
+            tagName = "iframe";
+            
+            width = "200";
+            height = "200";
+        }
+    }
+
+    class Hyperlink : HElement
+    {
+        public string src { get; set; }
+
+        public Hyperlink()
+        {
+            src = "https://www.google.com";
+            tagName = "a";
+            displayName = "link";
+        }
+    }
+
+    class Boldface : HElement
+    {
+        public string innerText { get; set; }
+        public Boldface()
+        {
+            displayName = "Boldface";
+            tagName = "b";
+            innerText = "";
+        }
+    }
+
+    class HTMLVariable : HElement
+    {
+        public string innerText { get; set; }
+        public HTMLVariable()
+        {
+            displayName = "Variable";
+            tagName = "var";
+            innerText = "";
+        }
+    }
+
+    class CodeBlock : HElement
+    {
+        public string innerText { get; set; }
+        public CodeBlock()
+        {
+            displayName = "Code";
+            tagName = "code";
+            innerText = "";
+        }
+    }
+
+    class Break : HElement
+    {
+        public Break()
+        {
+            displayName = "Break";
+            tagName = "br";
+        }
+    }
+
+    class Small :HElement
+    {
+        public string innerText { get; set; }
+        public Small()
+        {
+            displayName = "Small Text";
+            tagName = "small";
+            innerText = "";
+        }
+    }
+
+
+
+
 }
