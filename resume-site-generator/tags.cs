@@ -307,7 +307,61 @@ namespace resume_site_generator
         }
     }
 
+    class Underline : HElement
+    {
+        public string innerText { get; set; }
+        public Underline()
+        {
+            displayName = "Underline Text";
+            tagName = "u";
+            innerText = "";
+        }
+    }
 
+    class OrderedList : HElement
+    {
+        public string innerText { get; set; }
+        public OrderedList()
+        {
+            displayName = "Ordered List Element";
+            tagName = "ol";
+            innerText = "";
+        }
+    }
 
+    class Div : HElement
+    {
+        public string innerText { get; set; }
+        public Div()
+        {
+            displayName = "Div";
+            tagName = "div";
+            innerText = "";
+        }
+    }
 
+    class Emphasis : HElement
+    {
+        public string innerText { get; set; }
+        public Emphasis()
+        {
+            displayName = "Emphasis Text";
+            tagName = "em";
+            innerText = "";
+        }
+    }
+
+    class Subset : HElement
+    {
+        public string innerText { get; set; }
+        public Subset()
+        {
+            displayName = "Subset";
+            tagName = "sub";
+            innerText = "";
+        }
+    }
 }
+
+
+

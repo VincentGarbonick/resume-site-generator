@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection;
-
+using System.Diagnostics;
 
 
 namespace resume_site_generator
@@ -325,6 +325,13 @@ namespace resume_site_generator
 
         private void button8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //System.Diagnostics.Process.Start("https://github.com/VincentGarbonick/resume-site-generator");
+            System.Diagnostics.Process.Start(new ProcessStartInfo("https://github.com/VincentGarbonick/resume-site-generator") { UseShellExecute = true });
 
         }
     }
