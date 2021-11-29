@@ -77,7 +77,7 @@ namespace resume_site_generator
                 }
                 else if (attributeList[i].Name == "innerText")
                 {
-                    stringInnerText = attributeList[i].Name;
+                    stringInnerText = (string)attributeList[i].GetValue(this);
                 }
 
                 i--;
