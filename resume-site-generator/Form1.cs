@@ -46,15 +46,6 @@ namespace resume_site_generator
 
             textBox1.Text = Directory.GetCurrentDirectory();
             textBox2.PlaceholderText = "your_file_name";
-
-            Button cum = new Button();
-            cum.generateLine();
-
-            Paragraph bum = new Paragraph();
-            bum.generateLine();
-
-            Header shum = new Header();
-            shum.generateLine();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -271,6 +262,33 @@ namespace resume_site_generator
             {
                 string fileName = textBox1.Text + "\\" + textBox2.Text + ".html";
                 System.Diagnostics.Debug.WriteLine(fileName);
+
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    writer.WriteLine("<!DOCTYPE html>");
+                    writer.WriteLine("<html>");
+                    writer.WriteLine("<head>");
+                    writer.WriteLine("<title>");
+                    writer.WriteLine("Resume");
+                    writer.WriteLine("</title>");
+                    writer.WriteLine("<body>");
+                    // centers all our elements so they look nice 
+                    writer.WriteLine("<div style=\"text-align: center;\">");
+
+                    // put our user generated code in 
+                    for(int i = 0; i < listBox2.Items.Count; i++)
+                    {
+                        // call function "generateLine" dynamcially 
+                        Type thisType = listBox2.Items[i].GetType();
+                        MethodInfo printLine = thisType.GetMethod("generateLine");
+                        var returnedString = printLine.Invoke(listBox2.Items[i], null);
+                        writer.WriteLine(returnedString);
+                    }
+
+                    writer.WriteLine("</div>");
+                    writer.WriteLine("</body>");
+                    writer.WriteLine("</html>");
+                }
             }
         }
 

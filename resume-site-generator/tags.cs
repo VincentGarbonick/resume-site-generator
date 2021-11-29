@@ -163,8 +163,8 @@ namespace resume_site_generator
         public string innerText { get; set; }
         public Button()
         {
-            tagName = "buttonII";
-            displayName = "buttonII";
+            tagName = "button";
+            displayName = "button";
             name = "button";
             href = "";
             action = "";
