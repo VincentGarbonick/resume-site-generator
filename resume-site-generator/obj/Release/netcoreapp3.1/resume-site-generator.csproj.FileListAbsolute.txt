@@ -1,0 +1,16 @@
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.exe
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.deps.json
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.runtimeconfig.json
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.runtimeconfig.dev.json
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.dll
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\bin\Release\netcoreapp3.1\resume-site-generator.pdb
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.csprojAssemblyReference.cache
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume_site_generator.Form1.resources
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume_site_generator.Properties.Resources.resources
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.csproj.GenerateResource.cache
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.AssemblyInfoInputs.cache
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.AssemblyInfo.cs
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.csproj.CoreCompileInputs.cache
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.dll
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.pdb
+C:\Users\12348\source\repos\resume-site-generator\resume-site-generator\obj\Release\netcoreapp3.1\resume-site-generator.genruntimeconfig.cache
